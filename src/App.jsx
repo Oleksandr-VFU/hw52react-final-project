@@ -3,6 +3,8 @@ import Navbar from './components/common/Navbar'
 import Home from './components/pages/Home'
 import Posts from './components/pages/Posts'
 import Users from './components/pages/Users'
+import ToDos from './components/pages/ToDos'
+import Products from './components/pages/Products'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/posts' element={<Posts />} />
           <Route path='/users' element={<Users />} />
+          <Route path='/todos' element={<ToDos />} />
+          <Route path='/products' element={<Products />} />
         </Routes>
       </div>
     </BrowserRouter>

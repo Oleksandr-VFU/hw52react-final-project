@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface UseFetchResult<T> {
     data: T[]
@@ -7,26 +7,37 @@ export interface UseFetchResult<T> {
     error: string | null
 }
 
-const useFetch = <T>(url: string): UseFetchResult<T> => {
+const useFetch = <T>(url: string, limit?: number): UseFetchResult<T> => {
       const [data, setData] = useState<T[]>([])
       const [isLoading, setIsLoading] = useState<boolean>(false)
       const [error, setError] = useState<string | null>(null)
 
-      useEffect(() => {
-          const fetchData = async () => {
-          try {
-              setIsLoading(true)
-              setError(null)
-              const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-              await delay(1000)
-              const response = await axios.get(url)
+      const cancelTokenSource = useRef(axios.CancelToken.source())
 
-          if (response.status !== 200) {
-              throw new Error(`Error: Request failed with status code ${response.status}`)
-          }
-          setData(response.data as T[])
+      useEffect(() => {
+        const currentCancelTokenSource = cancelTokenSource.current
+        const fetchData = async () => {
+          setIsLoading(true)
+          setError(null)
+          try {
+            const response = await axios.get<T[]>(url, {
+                params: {
+                    _limit: limit
+                },
+                cancelToken: currentCancelTokenSource.token
+              })
+              
+            if (response.status !== 200) {
+                throw new Error(`Error: Request failed with status code ${response.status}`)
+            }
+            setData(response.data)
           } catch (error) {
-              setError(error as string)
+            if (axios.isCancel(error)) {
+                console.log('Request Cancelled:', error.message)
+            } else {
+                setError(`Error fetching data: ${((error as Error).message)}`)
+            }
+            
           } finally {
               setIsLoading(false)
           }  
@@ -34,8 +45,12 @@ const useFetch = <T>(url: string): UseFetchResult<T> => {
 
         if (url) {
             fetchData()
-        }    
-      }, [url])
+        }
+        
+        // return () => {
+        //     currentCancelTokenSource.cancel('Operation cancelled due to new request')
+        // }
+      }, [url, limit])
 
     return { data, isLoading, error }
 }

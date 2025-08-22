@@ -9,7 +9,7 @@ interface PostInterface {
 }
 
 const Posts = () => {
-  const { data: posts, isLoading, error } = useFetch<PostInterface>('https://jsonplaceholder.typicode.com/posts')
+  const { data: posts, isLoading, error } = useFetch<PostInterface>('https://jsonplaceholder.typicode.com/posts', 10)
   return (
     <div>
       <h1>Posts</h1>
