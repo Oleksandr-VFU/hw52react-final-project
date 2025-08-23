@@ -12,10 +12,8 @@ const useFetch = <T>(url: string, limit?: number): UseFetchResult<T> => {
       const [isLoading, setIsLoading] = useState<boolean>(false)
       const [error, setError] = useState<string | null>(null)
 
-      const cancelTokenSource = useRef(axios.CancelToken.source())
-
       useEffect(() => {
-        const currentCancelTokenSource = cancelTokenSource.current
+        const cancelTokenSource = axios.CancelToken.source()
         const fetchData = async () => {
           setIsLoading(true)
           setError(null)
@@ -24,7 +22,7 @@ const useFetch = <T>(url: string, limit?: number): UseFetchResult<T> => {
                 params: {
                     _limit: limit
                 },
-                cancelToken: currentCancelTokenSource.token
+                cancelToken: cancelTokenSource.token
               })
               
             if (response.status !== 200) {
@@ -47,9 +45,9 @@ const useFetch = <T>(url: string, limit?: number): UseFetchResult<T> => {
             fetchData()
         }
         
-        // return () => {
-        //     currentCancelTokenSource.cancel('Operation cancelled due to new request')
-        // }
+        return () => {
+            cancelTokenSource.cancel('Operation cancelled due to new request')
+        }
       }, [url, limit])
 
     return { data, isLoading, error }
