@@ -14,9 +14,8 @@ const Modal = ({children, onClose}: ModalProps) => {
     <div className="modal-overlay">
         <div className="modal">
             <span className="modal__close" onClick={onClose}>x</span>
-            <h2>Додати автомобіль</h2>
+            {children}
         </div>
-        {children}
     </div>,
     modalRoot
   )
