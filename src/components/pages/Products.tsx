@@ -4,6 +4,7 @@ import { createUrl } from "../../utils/mockapi"
 import { API_ITEMS_PER_PAGE_LIMIT } from "../../utils/mockapi"
 import type { ProductInterface } from "../../types/Product.interface"
 import Product from "../products/Product"
+import AddProductButton from "../products/AddProductButton"
 
 const Products = () => {
   const [page, setPage] = useState<number>(1)
@@ -13,6 +14,7 @@ const Products = () => {
   return (
     <div>
       <h1>Cars</h1>
+      <AddProductButton />
       {isLoading && <h2 className="loading">Loading...</h2>}
       {error && <h2 className="error">{error}</h2>}
       {!isLoading && !error && (
