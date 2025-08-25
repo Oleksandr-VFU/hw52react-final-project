@@ -59,3 +59,114 @@
     padding: 1rem;
   }
 }
+
+/* СТИЛІ ДЛЯ СПИСКУ ПРОДУКТІВ */
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 0;
+  margin: 2rem 0;
+  list-style: none;
+}
+
+.product-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.5s box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-item:hover {
+  transform: scale(1.03);
+}
+.product-item__image {
+  width: 220px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f4f4f4;
+}
+.product-item__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+.product-item__description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.product-item__category {
+  font-size: 0.95rem;
+  color: #1abc9c;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.product-item__price {
+  font-size: 1.1rem;
+  color: #e67e22;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* ПАГІНАЦІЯ */
+.pagination {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.pagination__btn {
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pagination__btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+.pagination__btn:not(:disabled):hover {
+  background: #16a085;
+}
+
+/* LOADING & ERROR */
+.loading {
+  color: #1abc9c;
+  text-align: center;
+  margin: 2rem 0;
+}
+.error {
+  color: #e74c3c;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* CONTENT */
+.content {
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .products-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .product-item__image {
+    width: 100%;
+    height: 120px;
+  }
+
+}
