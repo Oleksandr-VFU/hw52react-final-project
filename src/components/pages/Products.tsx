@@ -1,16 +1,9 @@
 import { useState } from "react"
 import useFetch from "../../hooks/useFetch"
-import { createUrl } from "../utils/mockapi"
-import { API_ITEMS_PER_PAGE_LIMIT } from "../utils/mockapi"
-
-interface ProductInterface {
-    id: number
-    name: string
-    description: string
-    price: number
-    image: string
-    category: string
-}
+import { createUrl } from "../../utils/mockapi"
+import { API_ITEMS_PER_PAGE_LIMIT } from "../../utils/mockapi"
+import type { ProductInterface } from "../../types/Product.interface"
+import Product from "../products/Product"
 
 const Products = () => {
   const [page, setPage] = useState<number>(1)
@@ -22,20 +15,14 @@ const Products = () => {
       {isLoading && <h2 className="loading">Loading...</h2>}
       {error && <h2 className="error">{error}</h2>}
       {!isLoading && !error && (
-        <div>
-          <div  className="pagination">
-            <button disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>Prev</button>
-            <button disabled={cars.length < API_ITEMS_PER_PAGE_LIMIT} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+        <div className="content">
+          <div className="pagination">
+            <button className="pagination__btn" disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>Prev</button>
+            <button className="pagination__btn" disabled={cars.length < API_ITEMS_PER_PAGE_LIMIT} onClick={() => setPage((prev) => prev + 1)}>Next</button>
           </div>
-          <ul>
+          <ul className="products-list">
             {cars.length > 0 && cars.map((car) => (
-              <li key={car.id}>
-                <h2>{car.name}</h2>
-                <p>{car.description}</p>
-                <p>{car.price}</p>
-                <p>{car.image}</p>
-                <p>{car.category}</p>
-              </li>
+              <Product key={car.id} product={car} />
             ))}
           </ul>
         </div>

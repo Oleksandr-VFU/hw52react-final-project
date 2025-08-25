@@ -1,0 +1,402 @@
+[
+  {
+    "id": "1",
+    "name": "Tesla Model S Plaid",
+    "description": "Електричний седан з потужністю понад 1000 к.с. і автономністю 628 км.",
+    "price": 129990,
+    "image": "https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg",
+    "category": "Electric"
+  },
+  {
+    "id": "2",
+    "name": "BMW iX M60",
+    "description": "Преміальний електро-SUV з інноваційним дизайном і потужністю 610 к.с.",
+    "price": 108900,
+    "image": "https://www.bmwusa.com/content/dam/bmwusa/ix/2023/BMW_MY23_iX_M60_Gallery_1.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "3",
+    "name": "Audi Q4 e-tron",
+    "description": "Компактний електричний кросовер з високим рівнем комфорту.",
+    "price": 49900,
+    "image": "https://www.audiusa.com/content/dam/nemo/us/models/q4etron/my2023/overview/2023-q4etron-hero-1-1.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "4",
+    "name": "Mercedes-Benz EQS",
+    "description": "Флагманський електро-седан з Hyperscreen дисплеєм.",
+    "price": 102310,
+    "image": "https://www.mercedes-benz.com/en/vehicles/passenger-cars/eqs/_jcr_content/root/slider/slideritem/image/MQ6-12-image-20210415103344/01-mercedes-benz-eqs-v-297-3400x1440.jpeg",
+    "category": "Sedan"
+  },
+  {
+    "id": "5",
+    "name": "Porsche Taycan Turbo S",
+    "description": "Спортивний електрокар з неймовірною динамікою.",
+    "price": 185000,
+    "image": "https://files.porsche.com/filestore/image/multimedia/none/rd-2022-taycan-turbo-s-modelimage-kw21/normal/7e8e5c2a-7b8e-11ec-80e3-005056bbdc38;sO;twebp/porsche-normal.webp",
+    "category": "Coupe"
+  },
+  {
+    "id": "6",
+    "name": "Lucid Air Grand Touring",
+    "description": "Розкішний електро-седан з автономністю понад 800 км.",
+    "price": 138000,
+    "image": "https://www.lucidmotors.com/media/images/air-grand-touring/hero/air-grand-touring-hero-desktop.jpg",
+    "category": "Electric"
+  },
+  {
+    "id": "7",
+    "name": "Ford Mustang Mach-E",
+    "description": "Електричний SUV з духом легендарного Mustang.",
+    "price": 55900,
+    "image": "https://www.ford.com/is/image/content/dam/brand_ford/en_us/brand/suvs/mach-e/2023/collections/dm/23_FRD_MCH_40654_GTPE_32.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "8",
+    "name": "Hyundai Ioniq 6",
+    "description": "Аеродинамічний електро-седан з футуристичним дизайном.",
+    "price": 46900,
+    "image": "https://www.hyundai.com/content/dam/hyundai/ww/en/images/showroom/ioniq6/ioniq6-exterior-01.jpg",
+    "category": "Sedan"
+  },
+  {
+    "id": "9",
+    "name": "Kia EV6 GT",
+    "description": "Потужний електрокар з розгоном до 100 км/год за 3.5 секунди.",
+    "price": 61500,
+    "image": "https://www.kia.com/content/dam/kia/us/en/vehicles/ev6/2023/gallery/ev6-gt/2023-ev6-gt-gallery-01.jpg",
+    "category": "Electric"
+  },
+  {
+    "id": "10",
+    "name": "Volkswagen ID.7",
+    "description": "Новий електро-седан з просторим салоном і сучасними технологіями.",
+    "price": 49990,
+    "image": "https://www.volkswagen-newsroom.com/en/media/images/volkswagen-id7-2023-1-1-1.jpg",
+    "category": "Sedan"
+  },
+  {
+    "id": "11",
+    "name": "Nissan Ariya",
+    "description": "Елегантний електро-кросовер з інтелектуальним керуванням.",
+    "price": 47900,
+    "image": "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/ariya/2023/overview/2023-nissan-ariya-overview-hero.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "12",
+    "name": "Chevrolet Blazer EV",
+    "description": "Електричний SUV з агресивним дизайном і високою продуктивністю.",
+    "price": 52900,
+    "image": "https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2024/electric/blazer-ev/mov/01-images/2024-blazer-ev-masthead-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "13",
+    "name": "Rivian R1T",
+    "description": "Електричний пікап з позашляховими можливостями.",
+    "price": 73900,
+    "image": "https://images.rivian.com/rivian-r1t-hero-1920.jpg",
+    "category": "Pickup"
+  },
+  {
+    "id": "14",
+    "name": "Toyota bZ4X",
+    "description": "Перший електро-SUV від Toyota з сучасним дизайном.",
+    "price": 42900,
+    "image": "https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2024/bz4x/1K3.png",
+    "category": "SUV"
+  },
+  {
+    "id": "15",
+    "name": "Subaru Solterra",
+    "description": "Електричний кросовер з повним приводом і екологічним підходом.",
+    "price": 44900,
+    "image": "https://www.subaru.com/content/dam/subaru/vehicles/solterra/2023/gallery/solterra-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "16",
+    "name": "Volvo EX90",
+    "description": "Преміальний електро-SUV з акцентом на безпеку.",
+    "price": 78900,
+    "image": "https://www.volvocars.com/images/v/-/media/project/vcc-global/media/images/models/ex90/2023/gallery/volvo-ex90-gallery-1.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "17",
+    "name": "Polestar 2",
+    "description": "Стильний електро-седан з шведським дизайном.",
+    "price": 51900,
+    "image": "https://www.polestar.com/images/polestar-2/hero/polestar-2-hero-desktop.jpg",
+    "category": "Sedan"
+  },
+  {
+    "id": "18",
+    "name": "Genesis GV60",
+    "description": "Розкішний електро-кросовер з унікальним інтер'єром.",
+    "price": 59900,
+    "image": "https://www.genesis.com/content/dam/genesis/us/models/gv60/2023/gallery/2023-genesis-gv60-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "19",
+    "name": "Honda Prologue",
+    "description": "Новий електро-SUV з просторим салоном і сучасними функціями.",
+    "price": 48900,
+    "image": "https://www.honda.ca/Content/honda.ca/7d7e2e2e-7e2e-4e2e-9e2e-7e2e2e2e2e2e/ModelPage_Hero_Desktop_Prologue_2024.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "20",
+    "name": "Mazda MX-30 EV",
+    "description": "Компактний електро-кросовер з унікальними дверима.",
+    "price": 34900,
+    "image": "https://www.mazdausa.com/siteassets/vehicles/2023/mx-30-ev/gallery/2023-mazda-mx-30-ev-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "21",
+    "name": "Fiat 500e",
+    "description": "Маленький електро-хетчбек для міста з італійським шармом.",
+    "price": 31900,
+    "image": "https://www.fiat.com/content/dam/fiat/cross/500e/500e-cross-hero.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "22",
+    "name": "Mini Cooper SE",
+    "description": "Електрична версія культового Mini з веселим керуванням.",
+    "price": 32900,
+    "image": "https://www.miniusa.com/content/dam/miniusa/miniusa-models/mini-cooper-se/2024/gallery/2024-mini-cooper-se-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "23",
+    "name": "Renault Megane E-Tech Electric",
+    "description": "Електро-хетчбек з європейським стилем, інноваційним інтерфейсом OpenR та запасом ходу до 470 км.",
+    "price": 37900,
+    "image": "https://www.renault.co.uk/content/dam/renault/gb/vehicles/megane-e-tech-electric/gallery/megane-e-tech-electric-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "24",
+    "name": "Peugeot e-2008",
+    "description": "Компактний електро-кросовер з сучасним дизайном, цифровою панеллю i-Cockpit та запасом ходу до 406 км.",
+    "price": 35900,
+    "image": "https://www.peugeot.co.uk/content/dam/peugeot/gb/vehicles/e-2008/gallery/e-2008-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "25",
+    "name": "DS 3 E-Tense",
+    "description": "Преміальний електро-хетчбек з французьким шармом, високоякісними матеріалами та запасом ходу до 402 км.",
+    "price": 36900,
+    "image": "https://www.dsautomobiles.co.uk/content/dam/ds/gb/vehicles/ds-3-e-tense/gallery/ds-3-e-tense-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "26",
+    "name": "Citroën ë-C4",
+    "description": "Електро-хетчбек з комфортною підвіскою та стильним дизайном.",
+    "price": 34900,
+    "image": "https://www.citroen.co.uk/content/dam/citroen/gb/vehicles/e-c4/gallery/e-c4-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "27",
+    "name": "Opel Mokka-e",
+    "description": "Компактний електро-кросовер з яскравим зовнішнім виглядом.",
+    "price": 35900,
+    "image": "https://www.opel.com/content/dam/opel/master/vehicles/mokka-e/gallery/mokka-e-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "28",
+    "name": "Skoda Enyaq iV",
+    "description": "Просторий електро-SUV з чеською практичністю.",
+    "price": 41900,
+    "image": "https://cdn.skoda-storyboard.com/2020/09/Enyaq_iV_2020_001.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "29",
+    "name": "Cupra Born",
+    "description": "Спортивний електро-хетчбек з агресивним стилем.",
+    "price": 38900,
+    "image": "https://www.cupraofficial.com/content/dam/public/cupra-website/cars/cupra-born/gallery/cupra-born-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "30",
+    "name": "BYD Atto 3",
+    "description": "Китайський електро-кросовер з хорошим співвідношенням ціни та якості.",
+    "price": 33900,
+    "image": "https://www.byd.com/content/dam/byd/global/vehicles/atto-3/gallery/atto-3-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "31",
+    "name": "MG4 Electric",
+    "description": "Доступний електро-хетчбек з сучасним дизайном.",
+    "price": 29900,
+    "image": "https://mg.co.uk/content/dam/mg/uk/vehicles/mg4-ev/gallery/mg4-ev-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "32",
+    "name": "Aiways U5",
+    "description": "Електро-SUV з великим запасом ходу та мінімалістичним дизайном.",
+    "price": 35900,
+    "image": "https://www.ai-ways.eu/content/dam/aiways/eu/vehicles/u5/gallery/u5-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "33",
+    "name": "Xpeng P7",
+    "description": "Електро-седан з інноваційними функціями та автономним водінням.",
+    "price": 45900,
+    "image": "https://en.xiaopeng.com/content/dam/xpeng/global/vehicles/p7/gallery/p7-gallery-01.jpg",
+    "category": "Sedan"
+  },
+  {
+    "id": "34",
+    "name": "NIO ET5",
+    "description": "Преміальний електро-седан з технологією заміни батарей.",
+    "price": 49900,
+    "image": "https://www.nio.com/sites/default/files/images/et5/gallery/et5-gallery-01.jpg",
+    "category": "Sedan"
+  },
+  {
+    "id": "35",
+    "name": "VinFast VF8",
+    "description": "В'єтнамський електро-SUV з глобальними амбіціями.",
+    "price": 42900,
+    "image": "https://vinfastauto.com/sites/default/files/styles/vehicle_gallery/public/2022-09/vf8-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "36",
+    "name": "Seres 3",
+    "description": "Електро-кросовер з простим дизайном і базовими функціями.",
+    "price": 31900,
+    "image": "https://www.seres.com/sites/default/files/styles/vehicle_gallery/public/2022-09/seres3-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "37",
+    "name": "Leapmotor C11",
+    "description": "Електро-SUV з великим екраном і штучним інтелектом.",
+    "price": 37900,
+    "image": "https://en.leapmotor.com/content/dam/leapmotor/global/vehicles/c11/gallery/c11-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "38",
+    "name": "Ora Funky Cat",
+    "description": "Міський електро-хетчбек з ретро-дизайном.",
+    "price": 28900,
+    "image": "https://gwmora.co.uk/content/dam/gwmora/uk/vehicles/funky-cat/gallery/funky-cat-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "39",
+    "name": "Smart #1",
+    "description": "Компактний електро-SUV з преміальним інтер'єром.",
+    "price": 34900,
+    "image": "https://www.smart.com/content/dam/smart/global/vehicles/smart-1/gallery/smart-1-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "40",
+    "name": "Tesla Cybertruck",
+    "description": "Футуристичний електро-пікап з броньованим корпусом.",
+    "price": 69900,
+    "image": "https://www.tesla.com/sites/default/files/cybertruck/v1/hero.jpg",
+    "category": "Pickup"
+  },
+  {
+    "id": "41",
+    "name": "GMC Hummer EV",
+    "description": "Потужний електро-позашляховик з режимом краба.",
+    "price": 112000,
+    "image": "https://www.gmc.com/content/dam/gmc/na/us/english/index/vehicles/2024/electric/hummer-ev/gallery/hummer-ev-gallery-01.jpg",
+    "category": "Pickup"
+  },
+  {
+    "id": "42",
+    "name": "Ram 1500 REV",
+    "description": "Електрична версія культового пікапа з високою вантажопідйомністю.",
+    "price": 58900,
+    "image": "https://www.ramtrucks.com/content/dam/ramtrucks/na/us/english/index/vehicles/2024/ram-1500-rev/gallery/ram-1500-rev-gallery-01.jpg",
+    "category": "Pickup"
+  },
+  {
+    "id": "43",
+    "name": "Fisker Ocean",
+    "description": "Електро-SUV з сонячним дахом і екологічними матеріалами.",
+    "price": 37900,
+    "image": "https://www.fiskerinc.com/content/dam/fiskerinc/global/vehicles/ocean/gallery/ocean-gallery-01.jpg",
+    "category": "SUV"
+  },
+  {
+    "id": "44",
+    "name": "Canoo Lifestyle Vehicle",
+    "description": "Мінівен з унікальним дизайном і електричною платформою.",
+    "price": 39900,
+    "image": "https://www.canoo.com/content/dam/canoo/global/vehicles/lifestyle-vehicle/gallery/lifestyle-vehicle-gallery-01.jpg",
+    "category": "Van"
+  },
+  {
+    "id": "45",
+    "name": "Mercedes-Benz EQV",
+    "description": "Електро-мінівен для сімейних подорожей і бізнесу.",
+    "price": 74900,
+    "image": "https://www.mercedes-benz.com/en/vehicles/passenger-cars/eqv/_jcr_content/root/slider/slideritem/image/MQ6-12-image-20210415103344/01-mercedes-benz-eqv-v-297-3400x1440.jpeg",
+    "category": "Van"
+  },
+  {
+    "id": "46",
+    "name": "Volkswagen ID. Buzz",
+    "description": "Електро-версія легендарного мікроавтобуса з ретро-стилем.",
+    "price": 58900,
+    "image": "https://www.volkswagen-newsroom.com/en/media/images/volkswagen-id-buzz-2022-1-1.jpg",
+    "category": "Van"
+  },
+  {
+    "id": "47",
+    "name": "Renault Kangoo E-Tech",
+    "description": "Електро-фургон для бізнесу з практичним салоном.",
+    "price": 34900,
+    "image": "https://cdn.group.renault.com/ren/master/renault-new-kangoo-etech-van/renault-new-kangoo-etech-van-gallery-01.jpg.ximg.l_12_h.smart.jpg",
+    "category": "Van"
+  },
+  {
+    "id": "48",
+    "name": "Toyota Mirai",
+    "description": "Воднево-електричний седан з запасом ходу понад 650 км.",
+    "price": 49900,
+    "image": "https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2024/mirai/1J9.png",
+    "category": "Sedan"
+  },
+  {
+    "id": "49",
+    "name": "BYD Dolphin",
+    "description": "Компактний електро-хетчбек з сучасним дизайном та великим запасом ходу.",
+    "price": 25900,
+    "image": "https://www.byd.com/content/dam/byd/global/vehicles/dolphin/gallery/dolphin-gallery-01.jpg",
+    "category": "Hatchback"
+  },
+  {
+    "id": "50",
+    "name": "Hyundai Kona Electric",
+    "description": "Популярний електро-кросовер з сучасними технологіями.",
+    "price": 34900,
+    "image": "https://www.hyundai.com/content/dam/hyundai/ww/en/images/showroom/kona-electric/kona-electric-exterior-01.jpg",
+    "category": "SUV"
+  }
+]
