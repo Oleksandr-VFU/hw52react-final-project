@@ -1,24 +1,21 @@
 import { useState, FormEvent } from "react"
 import type { ProductInterface } from "../../types/Product.interface"
-import { CAR_CATEGORIES } from "../../data/mockData"
+import { CAR_CATEGORIES, INITIAL_CAR } from "../../data/mockData"
 
 interface ProductFormProps {
-  onSubmit: (product: ProductInterface) => void
-  initialData?: ProductInterface
+  onSubmit: (product: Partial<ProductInterface>) => void
 }
 
 const ProductForm = ({onSubmit}: ProductFormProps) => {
-    const [id, setId] = useState(0)
-    const [name, setName] = useState('')
-    const [description, setDescription] = useState('')
-    const [price, setPrice] = useState('')
-    const [category, setCategory] = useState('')
-    const [image, setImage] = useState('https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg')
+    const [name, setName] = useState(INITIAL_CAR.name)
+    const [description, setDescription] = useState(INITIAL_CAR.description)
+    const [price, setPrice] = useState(INITIAL_CAR.price)
+    const [category, setCategory] = useState(INITIAL_CAR.category)
+    const [image, setImage] = useState(INITIAL_CAR.image)
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        onSubmit({id, name, description, price, category, image})
-        setId(0)
+        onSubmit({name, description, price, category, image})
         setName('')
         setDescription('')
         setPrice('')
