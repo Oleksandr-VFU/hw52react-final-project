@@ -295,3 +295,40 @@ ul.todos-list {
   }
 
 }
+
+/* МОДАЛЬНЕ ВІКНО */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(44, 62, 80, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  position: relative;
+  text-align: center;
+}
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 1.6rem;
+  color: #e74c3c;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.modal__close:hover {
+  color: #c0392b;
+}
