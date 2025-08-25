@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react"
 import type { ProductInterface } from "../../types/Product.interface"
+import { CAR_CATEGORIES } from "../../data/mockData"
 
 interface ProductFormProps {
   onSubmit: (product: ProductInterface) => void
@@ -45,14 +46,10 @@ const ProductForm = ({onSubmit}: ProductFormProps) => {
         <div className="form-group">
             <label className="form-label" htmlFor="category">Category:</label>
             <select className="form-control" id="category" value={category} onChange={(e) => setCategory(e.target.value)} required>
-              <option value="">Select a category...</option>
-              <option value="сoupe">Coupe</option>
-              <option value="electric">Electric</option>
-              <option value="hatchback">Hatchback</option>
-              <option value="pickup">Pickup</option>
-              <option value="sedan">Sedan</option>
-              <option value="suv">SUV</option>
-              <option value="Van">Van</option>
+              <option value="">Оберіть необхідну категорію...</option>
+              {CAR_CATEGORIES.map((category) => (
+                <option key={category} value={category}>{category}</option>
+              ))}
             </select>
         </div>
         <div className="form-group">

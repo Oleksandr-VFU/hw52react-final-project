@@ -15,7 +15,7 @@ const AddProductButton = () => {
 
   return (
     <>
-        <button onClick={handleOpen}>Додати Автомобіль</button>
+        <button className="add-product-btn" onClick={handleOpen}>Додати Автомобіль</button>
         {showModal && (
             <Modal onClose={handleClose}>
                 <h2 className="modal__title">Додати новий автомобіль</h2>

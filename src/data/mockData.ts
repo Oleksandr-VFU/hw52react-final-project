@@ -1,0 +1,1 @@
+export const CAR_CATEGORIES: string[] = ['Coupe', 'Electric', 'Hatchback', 'Pickup', 'Sedan', 'SUV', 'Van']
