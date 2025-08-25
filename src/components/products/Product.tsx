@@ -1,9 +1,22 @@
+import axios from 'axios'
 import type { ProductInterface } from '../../types/Product.interface'
+import { API_URL } from '../../utils/mockapi'
+import { FaTrash, FaEdit } from 'react-icons/fa'
 interface ProductProps {
     product: ProductInterface
+    reload: () => void
 }
 
-const Product = ({product:{name, description, price, image, category}}: ProductProps) => {
+const Product = ({product:{id, name, description, price, image, category}, reload}: ProductProps) => {
+    const handleDeleteProduct = async () => {
+        try {
+            const response = await axios.delete(`${API_URL}/${id}`)
+            console.log('Product deleted:', response.data)
+            reload()
+        } catch (error) {
+            console.error('Error deleting product:', error)
+        }
+    }
   return (
     <li className="product-item">
         <h2 className="product-item__title">{name}</h2>
@@ -11,6 +24,10 @@ const Product = ({product:{name, description, price, image, category}}: ProductP
         <p className="product-item__category">{category}</p>
         <h3 className="product-item__price">${price}</h3>
         <img className="product-item__image" src={image} alt={name} />
+        <div className="product-item__actions">
+            <button className="product-item__delete" onClick={handleDeleteProduct}><FaTrash /></button>
+            <button className="product-item__edit"><FaEdit /></button>
+        </div>
     </li>
   )
 }

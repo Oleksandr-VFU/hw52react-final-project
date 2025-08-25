@@ -117,6 +117,35 @@
   margin-bottom: 0.5rem;
 }
 
+.product-item__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+.product-item__delete, .product-item__edit {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.product-item__edit {
+  background: #3498db;
+}
+.product-item__delete:hover {
+  background: #c0392b;
+}
+.product-item__edit:hover {
+  background: #217dbb;
+}
+
 /* ПАГІНАЦІЯ */
 .pagination {
   display: flex;
@@ -157,6 +186,102 @@
 /* CONTENT */
 .content {
   margin-top: 2rem;
+}
+
+/* СТИЛІ ДЛЯ ГОЛОВНОЇ СТОРІНКИ */
+.home-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* СТИЛІ ДЛЯ СПИСКУ ПУБЛІКАЦІЙ */
+ul.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+.posts-list li {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+}
+.posts-list h2 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+.posts-list p {
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+.posts-list small {
+  color: #888;
+}
+
+/* СТИЛІ ДЛЯ СПИСКУ КОРИСТУВАЧІВ */
+ul.users-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+.users-list li {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+}
+.users-list h2 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+.users-list p {
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+/* СТИЛІ ДЛЯ СПИСКУ ЗАВДАНЬ */
+ul.todos-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+.todos-list li {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+}
+.todos-list h2 {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+.todos-list p {
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+/* СТИЛІ ДЛЯ КНОПОК */
+.btn {
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #16a085;
 }
 
 @media (max-width: 600px) {
