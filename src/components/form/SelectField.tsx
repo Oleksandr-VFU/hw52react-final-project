@@ -1,11 +1,12 @@
 import type { ChangeEvent } from "react"
+import { SelectOptionInterface } from "../../types/common"
 
 interface SelectFieldProps {
     id: string
     value: string
     label: string
     required?: boolean
-    options: { value: string; text: string }[]
+    options: SelectOptionInterface[]
     onChangeSelect?: (e: ChangeEvent<HTMLSelectElement>) => void
 }
 

@@ -3,20 +3,48 @@ import useFetch from "../../hooks/useFetch"
 import { createUrl } from "../../utils/mockapi"
 import { API_ITEMS_PER_PAGE_LIMIT } from "../../utils/mockapi"
 import type { ProductInterface } from "../../types/Product.interface"
+import { debounce } from "../../utils/debounce"
 import Product from "../products/Product"
 import AddProduct from "../products/AddProduct"
+import { SORT_BY_LIST, ORDER_LIST } from "../../data/mockData"
 
 const Products = () => {
   const [page, setPage] = useState<number>(1)
   const [reload, setReload] = useState('0')
   const [name, setName] = useState('')
-    const {data: cars, isLoading, error} = useFetch<ProductInterface>(createUrl(page, name), undefined, reload)
+  const [sort, setSort] = useState('')
+  const [order, setOrder] = useState('asc')
+    const {data: cars, isLoading, error} = useFetch<ProductInterface>(createUrl(page, name, sort, order), undefined, reload)
+    const debouncedSetName = debounce(setName, 1000)
 
   return (
     <div>
       <h1>Cars</h1>
       <div className="products-filter">
-        <input className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => setName(e.target.value)}/>
+        <div className="form-group">
+          <label htmlFor="filter">Фільтр за назвою</label>
+          <input id="filter" className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => debouncedSetName(e.target.value)}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="sort">Сортувати за</label>
+          <select className="products-filter__select" id="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
+            {SORT_BY_LIST.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.text}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="order">Порядок</label>
+          <select id="order" className="products-filter__select" onChange={(e) => setOrder(e.target.value)}>
+            {ORDER_LIST.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.text}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       {isLoading && <h2 className="loading">Loading...</h2>}
       {error && <h2 className="error">{error}</h2>}
