@@ -4,8 +4,9 @@ import ProductForm from "../form/ProductForm"
 import type { ProductInterface } from "../../types/Product.interface"
 import { useAdd } from "../../hooks/useAdd"
 import { API_URL } from "../../utils/mockapi"
+import { INITIAL_CAR } from "../../data/mockData"
 
-const AddProductButton = () => {
+const AddProduct = () => {
     const [showModal, setShowModal] = useState(false)
     const {add} = useAdd(API_URL)
 
@@ -28,11 +29,11 @@ const AddProductButton = () => {
         {showModal && (
             <Modal onClose={handleClose}>
                 <h2 className="modal__title">Додати новий автомобіль</h2>
-                <ProductForm onSubmit={handleSubmit} />
+                <ProductForm onSubmit={handleSubmit} product={INITIAL_CAR} />
             </Modal>
         )}
     </>
   )
 }
 
-export default AddProductButton
+export default AddProduct
