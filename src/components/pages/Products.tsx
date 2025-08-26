@@ -29,35 +29,37 @@ const Products = () => {
   }
 
   return (
-    <div>
-      <h1>Cars</h1>
-      <div className="products-filter">
-        <div className="form-group">
-          <label htmlFor="filter">Фільтр за назвою</label>
-          <input ref={inputRef} id="filter" className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => debouncedSetName(e.target.value)}/>
+      <div>
+        <h1>Cars</h1>
+        <div className="products-filter-panel">
+          <div className="products-filter">
+            <div className="products-filter__group">
+              <label htmlFor="filter">Фільтр за назвою</label>
+              <input ref={inputRef} id="filter" className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => debouncedSetName(e.target.value)}/>
+            </div>
+            <div className="products-filter__group">
+              <label htmlFor="sort">Сортувати за</label>
+              <select className="products-filter__select" id="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
+                {SORT_BY_LIST.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="products-filter__group">
+              <label htmlFor="order">Порядок</label>
+              <select id="order" className="products-filter__select" value={order} onChange={(e) => setOrder(e.target.value)}>
+                {ORDER_LIST.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <button className="products-filter__reset" onClick={resetFilters}><MdRefresh /></button>
         </div>
-        <div className="form-group">
-          <label htmlFor="sort">Сортувати за</label>
-          <select className="products-filter__select" id="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
-            {SORT_BY_LIST.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.text}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="order">Порядок</label>
-          <select id="order" className="products-filter__select" onChange={(e) => setOrder(e.target.value)}>
-            {ORDER_LIST.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.text}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button className="products-filter__reset" onClick={resetFilters}><MdRefresh /></button>
-      </div>
       {isLoading && <h2 className="loading">Loading...</h2>}
       {error && <h2 className="error">{error}</h2>}
       {!isLoading && !error && (
