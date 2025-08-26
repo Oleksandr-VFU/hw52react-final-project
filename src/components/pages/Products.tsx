@@ -16,7 +16,7 @@ const Products = () => {
     <div>
       <h1>Cars</h1>
       <div className="products-filter">
-        <input type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => setName(e.target.value)}/>
+        <input className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => setName(e.target.value)}/>
       </div>
       {isLoading && <h2 className="loading">Loading...</h2>}
       {error && <h2 className="error">{error}</h2>}

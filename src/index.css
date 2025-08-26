@@ -347,6 +347,67 @@ ul.todos-list {
   color: #c0392b;
 }
 
+.modal__title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.products-filter {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
+}
+
+.products-filter__input {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  background: #f7fbff;
+  color: #2c3e50;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+  outline: none;
+  width: 260px;
+  max-width: 100%;
+}
+.products-filter__input:focus {
+  border-color: #3498db;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+  background: #e3f0ff;
+}
+
+.buttons-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.form-button {
+  background: linear-gradient(90deg, #1abc9c 0%, #3498db 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+}
+.form-button:hover {
+  background: linear-gradient(90deg, #16a085 0%, #217dbb 100%);
+  box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+}
+
 /* КНОПКА ДОДАТИ АВТОМОБІЛЬ */
 .add-product-btn {
   background: linear-gradient(90deg, #1abc9c 0%, #3498db 100%);
