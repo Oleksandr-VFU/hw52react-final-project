@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
-
-interface UserInterface {
-  id: number
-  name: string
-  username: string
-  email: string
-  phone: string
-  website: string
-}
+import type { UserInterface } from '../../types/User.Interface'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch } from '../../redux/store'
+import { fetchAllUsers, selectUsers, selectUsersLoading, selectUsersError  } from '../../redux/slices/userSlice'
 
 const Users = () => {
-  const {data: users, isLoading, error} = useFetch<UserInterface>('https://jsonplaceholder.typicode.com/users')
+  const dispatch = useDispatch<AppDispatch>()
+  const users = useSelector(selectUsers)
+  const isLoading = useSelector(selectUsersLoading)
+  const error = useSelector(selectUsersError)
+
+  useEffect(() => {
+    dispatch(fetchAllUsers('https://jsonplaceholder.typicode.com/users'))
+  }, [dispatch])
 
   return (
     <div>

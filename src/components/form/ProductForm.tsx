@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react"
-import type { ProductInterface } from "../../types/Product.interface"
+import type { ProductInterface } from "../../types/Product.Interface"
 import { CAR_CATEGORIES } from "../../data/mockData"
 import InputField from "./InputField"
 import SelectField from "./SelectField"

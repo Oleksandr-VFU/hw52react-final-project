@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { ProductInterface } from '../../types/Product.interface'
+import type { ProductInterface } from '../../types/Product.Interface'
 import { API_URL } from '../../utils/mockapi'
 import { useDelete } from '../../hooks/useDelete'
 import { FaTrash, FaEdit } from 'react-icons/fa'

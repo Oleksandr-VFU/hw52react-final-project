@@ -1,15 +1,18 @@
-import React from 'react'
-import useFetch from '../../hooks/useFetch'
-
-interface PostInterface {
-  id: number
-  title: string
-  body: string
-  userId: number
-}
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch } from '../../redux/store'
+import { fetchAllPosts, selectPosts, selectPostsLoading, selectPostsError } from '../../redux/slices/postsSlice'
 
 const Posts = () => {
-  const { data: posts, isLoading, error } = useFetch<PostInterface>('https://jsonplaceholder.typicode.com/posts', 10)
+  const dispatch = useDispatch<AppDispatch>()
+  const posts = useSelector(selectPosts)
+  const isLoading = useSelector(selectPostsLoading)
+  const error = useSelector(selectPostsError)
+
+  useEffect(() => {
+    dispatch(fetchAllPosts('https://jsonplaceholder.typicode.com/posts'))
+  }, [dispatch])
+
   return (
     <div>
       <h1>Posts</h1>

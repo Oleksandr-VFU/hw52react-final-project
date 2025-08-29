@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { use } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router'
+import type { RootState } from '../../redux/store'
+import { login, logout } from '../../redux/slices/authSlice'
 
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn)
+
+  console.log('isLoggedIn', isLoggedIn)
+
+  const handleLogin = () => {
+    dispatch(login())
+  }
+  const handleLogout = () => {
+    dispatch(logout())
+  }
+
   return (
     <div className="navbar">
         <ul className="navbar__list">
@@ -29,6 +44,13 @@ const Navbar = () => {
               <NavLink to="/todos" className="navbar__link">
                   Завдання
                 </NavLink>
+            </li>
+            <li className="navbar__item">
+              {isLoggedIn ? (
+                <button className="navbar__button" onClick={handleLogout}>Вийти</button>
+              ) : (
+                <button className="navbar__button" onClick={handleLogin}>Увійти</button>
+              )}
             </li>
         </ul>
     </div>

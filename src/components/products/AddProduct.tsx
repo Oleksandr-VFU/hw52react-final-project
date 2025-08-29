@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Modal from "../modals/Modal"
 import ProductForm from "../form/ProductForm"
-import type { ProductInterface } from "../../types/Product.interface"
+import type { ProductInterface } from "../../types/Product.Interface"
 import { useAdd } from "../../hooks/useAdd"
 import { API_URL } from "../../utils/mockapi"
 import { INITIAL_CAR } from "../../data/mockData"

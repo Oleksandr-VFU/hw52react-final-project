@@ -1,4 +1,4 @@
-import { ProductInterface } from "../types/Product.interface"
+import { ProductInterface } from "../types/Product.Interface"
 import { SelectOptionInterface } from "../types/common"
 
 export const CAR_CATEGORIES: SelectOptionInterface[] = [
