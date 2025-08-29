@@ -1,31 +1,14 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import axios, { AxiosError } from 'axios'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { PostInterface } from '../../types/Post.Interface'
+import { createFetchThunk } from './createFetchThunk';
 
-interface PostsStateInterface {
-  posts: PostInterface[];
-  isLoading: boolean;
-  error: string | null;
-}
-
-const initialState: PostsStateInterface = {
-  posts: [],
+const initialState = {
+  posts: [] as PostInterface[],
   isLoading: false,
-  error: null
+  error: null as string | null
 }
 
-export const fetchAllPosts = createAsyncThunk('posts/fetchPosts', async (url: string, { rejectWithValue }) => {
-  try {
-    const response = await axios.get<PostInterface[]>(url)
-    if (response.status !== 200) {
-      throw new Error('Failed to fetch posts with status: ' + response.statusText)
-    }
-    return response.data
-  } catch (error) {
-    const axiosError = error as AxiosError
-    return rejectWithValue(axiosError.message || 'Failed to fetch posts')
-  }
-})
+export const fetchAllPosts = createFetchThunk<PostInterface[]>('posts/fetchAllPosts');
 
 const postsSlice = createSlice({
   name: 'posts',
@@ -43,8 +26,13 @@ const postsSlice = createSlice({
       })
       .addCase(fetchAllPosts.rejected, (state, action) => {
         state.isLoading = false;
-        if (action.payload instanceof Error) {
-          state.error = action.payload.message;
+        if (
+          action.payload &&
+          typeof action.payload === 'object' &&
+          'message' in action.payload &&
+          typeof (action.payload as any).message === 'string'
+        ) {
+          state.error = (action.payload as any).message;
         } else {
           state.error = 'An unknown error occurred';
         }
@@ -52,8 +40,8 @@ const postsSlice = createSlice({
   }
 })
 
-export const selectPosts = (state: { posts: PostsStateInterface }) => state.posts.posts;
-export const selectPostsLoading = (state: { posts: PostsStateInterface }) => state.posts.isLoading;
-export const selectPostsError = (state: { posts: PostsStateInterface }) => state.posts.error;
+export const selectPosts = (state: { posts }) => state.posts.posts;
+export const selectPostsLoading = (state: { posts }) => state.posts.isLoading;
+export const selectPostsError = (state: { posts }) => state.posts.error;
 
 export default postsSlice.reducer;

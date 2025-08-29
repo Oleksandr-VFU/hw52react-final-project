@@ -1,31 +1,14 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { UserInterface } from '../../types/User.Interface'
-import axios, { AxiosError } from 'axios'
+import { createFetchThunk } from './createFetchThunk'
 
-interface UserStateInterface {
-    users: UserInterface[]
-    isLoading: boolean
-    error: string | null
-}
-
-const initialState: UserStateInterface = {
-    users: [],
+const initialState = {
+    users: [] as UserInterface[],
     isLoading: false,
-    error: null
+    error: null as string | null
 }
 
-export const fetchAllUsers = createAsyncThunk('user/fetchUsers', async (url: string, { rejectWithValue }) => {
-    try {
-        const response = await axios.get<UserInterface[]>(url)
-        if (response.status !== 200) {
-            throw new Error('Failed to fetch users with status: ' + response.statusText)
-        }
-        return response.data
-    } catch (error) {
-        const axiosError = error as AxiosError
-        return rejectWithValue(axiosError.message || 'Failed to fetch users')
-    }
-})
+export const fetchAllUsers = createFetchThunk<UserInterface>('users/fetchAllUsers');
 
 const userSlice = createSlice({
     name: 'users',
@@ -43,8 +26,8 @@ const userSlice = createSlice({
             })
             .addCase(fetchAllUsers.rejected, (state, action) => {
                 state.isLoading = false;
-                if (action.payload instanceof Error) {
-                    state.error = action.payload.message;
+                if (action.error && action.error.message) {
+                    state.error = action.error.message;
                 } else {
                     state.error = 'An unknown error occurred';
                 }
@@ -52,8 +35,8 @@ const userSlice = createSlice({
     }
 })
 
-export const selectUsers = (state: { users: UserStateInterface }) => state.users.users;
-export const selectUsersLoading = (state: { users: UserStateInterface }) => state.users.isLoading;
-export const selectUsersError = (state: { users: UserStateInterface }) => state.users.error;
+export const selectUsers = (state: { users }) => state.users.users;
+export const selectUsersLoading = (state: { users }) => state.users.isLoading;
+export const selectUsersError = (state: { users }) => state.users.error;
 
 export default userSlice.reducer;

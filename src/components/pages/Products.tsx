@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { MdRefresh } from "react-icons/md"
 import useFetch from "../../hooks/useFetch"
 import { createUrl } from "../../utils/mockapi"
@@ -9,6 +9,9 @@ import Product from "../products/Product"
 import AddProduct from "../products/AddProduct"
 import { SORT_BY_LIST, ORDER_LIST } from "../../data/mockData"
 import SelectField from "../form/SelectField"
+import { useDispatch, useSelector } from "react-redux"
+import { AppDispatch, RootState } from "../../redux/store"
+import { fetchAllProducts, selectProducts, selectProductsError, selectProductsLoading } from "../../redux/slices/productsSlice"
 
 const Products = () => {
   const [page, setPage] = useState<number>(1)
@@ -16,10 +19,19 @@ const Products = () => {
   const [name, setName] = useState('')
   const [sort, setSort] = useState('')
   const [order, setOrder] = useState('asc')
-  const {data: cars, isLoading, error} = useFetch<ProductInterface>(createUrl(page, name, sort, order), undefined, reload)
   const debouncedSetName = debounce(setName, 1000)
 
   const inputRef = useRef<HTMLInputElement>(null)
+
+  const dispatch = useDispatch<AppDispatch>()
+  const products = useSelector(selectProducts)
+  const isLoading = useSelector(selectProductsLoading)
+  const error = useSelector(selectProductsError)
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn)
+
+  useEffect(() => {
+    dispatch(fetchAllProducts(createUrl(page, name, sort, order)))
+  }, [dispatch, page, name, sort, order, reload])
 
   const resetFilters = () => {
     setName('')
@@ -60,20 +72,20 @@ const Products = () => {
       {!isLoading && !error && (
         <div className="content">
           <div className="buttons-group">
-            <AddProduct />
             <div className="pagination">
+              {isLoggedIn && <AddProduct />}
               <button className="pagination__btn" disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>Prev</button>
-              <button className="pagination__btn" disabled={cars.length < API_ITEMS_PER_PAGE_LIMIT} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+              <button className="pagination__btn" disabled={products.length < API_ITEMS_PER_PAGE_LIMIT} onClick={() => setPage((prev) => prev + 1)}>Next</button>
             </div>
           </div>
-          {cars.length > 0 ? (
+          {products.length > 0 ? (
             <ul className="products-list">
-              {cars.map((car) => (
+              {products.map((car) => (
                 <Product key={car.id} product={car} reload={() => setReload(car.id.toString())} />
               ))}
             </ul>
           ) : (
-            <p>No products found.</p>
+            <p>No cars found!</p>
           )}
         </div>
       )}
