@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { use } from "react";
+import { RootState } from "../store";
 
-const initialState = {
+export interface AuthStateInterface {
+    isLoggedIn: boolean;
+}
+
+const initialState: AuthStateInterface = {
     isLoggedIn: true
 }
 
@@ -19,4 +23,5 @@ const authSlice = createSlice({
 })
 
 export const { login, logout } = authSlice.actions;
+export const selectIsLoggedIn = (state: RootState) => state.auth.isLoggedIn;
 export default authSlice.reducer;
