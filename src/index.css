@@ -124,6 +124,44 @@
   box-shadow: 0 4px 16px rgba(22,160,133,0.18);
   transform: scale(1.06);
 }
+.navbar__button {
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(231,76,60,0.12);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  outline: none;
+  margin-left: 1rem;
+  letter-spacing: 0.03em;
+}
+.navbar__button:hover, .navbar__button:focus {
+  background: linear-gradient(90deg, #c0392b 0%, #e74c3c 100%);
+  box-shadow: 0 4px 16px rgba(231,76,60,0.18);
+  transform: scale(1.06);
+}
+.navbar__button--login {
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+}
+.navbar__button--login:hover, .navbar__button--login:focus {
+  background: linear-gradient(90deg, #c0392b 0%, #e74c3c 100%);
+  box-shadow: 0 4px 16px rgba(231,76,60,0.18);
+  transform: scale(1.06);
+}
+.navbar__button--logout {
+  background: linear-gradient(90deg, #1abc9c 0%, #16a085 100%);
+  color: #fff;
+}
+.navbar__button--logout:hover, .navbar__button--logout:focus {
+  background: linear-gradient(90deg, #16a085 0%, #1abc9c 100%);
+  box-shadow: 0 4px 16px rgba(22,160,133,0.18);
+  transform: scale(1.06);
+}
 
 @media (max-width: 768px) {
   .navbar__list {
