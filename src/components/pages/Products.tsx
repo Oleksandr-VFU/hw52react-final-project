@@ -40,7 +40,7 @@ const Products = () => {
   const resetFilters = () => {
     setName('')
     setSort('')
-    setOrder('asc')
+    setOrder('')
     setPage(1)
     inputRef.current && (inputRef.current.value = '')
   }
@@ -50,7 +50,7 @@ const Products = () => {
         <h1 className="home-title">Сучасні Автомобілі</h1>
         <div className="products-filter-panel">
           <div className="products-filter">
-            <div className="products-filter__group">
+            <div className="form-group">
               <label className="products-filter__label" htmlFor="filter">Фільтр за назвою:</label>
               <input ref={inputRef} id="filter" className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => debouncedSetName(e.target.value)}/>
             </div>

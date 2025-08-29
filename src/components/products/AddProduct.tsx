@@ -25,7 +25,10 @@ const AddProduct = () => {
 
   return (
     <>
-        <button className="add-product-btn" onClick={handleOpen}>Додати Автомобіль</button>
+        <div className="pagination">
+           <button className="add-product-btn" onClick={handleOpen}>Додати Автомобіль</button> 
+        </div>
+        
         {showModal && (
             <Modal onClose={handleClose}>
                 <h2 className="modal__title">Додати новий автомобіль</h2>

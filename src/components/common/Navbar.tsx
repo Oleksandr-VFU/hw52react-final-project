@@ -47,9 +47,9 @@ const Navbar = () => {
             </li>
             <li className="navbar__item">
               {isLoggedIn ? (
-                <button className="navbar__button" onClick={handleLogout}>Вийти</button>
+                <button className="navbar__button navbar__button--logout" onClick={handleLogout}>Вийти</button>
               ) : (
-                <button className="navbar__button" onClick={handleLogin}>Увійти</button>
+                <button className="navbar__button navbar__button--login" onClick={handleLogin}>Увійти</button>
               )}
             </li>
         </ul>

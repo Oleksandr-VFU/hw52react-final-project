@@ -20,14 +20,12 @@ export const INITIAL_CAR: Partial<ProductInterface> = {
 }
 
 export const SORT_BY_LIST: SelectOptionInterface[] = [
-    { value: '', text: 'Без сортування' },
     { value: 'name', text: 'Назвою' },
     { value: 'price', text: 'Ціною' },
     { value: 'category', text: 'Категорією' }
 ]
 
 export const ORDER_LIST: SelectOptionInterface[] = [
-    { value: '', text: 'Без сортування' },
     { value: 'asc', text: 'По зростанню' },
     { value: 'desc', text: 'По спаданню' }
 ]
