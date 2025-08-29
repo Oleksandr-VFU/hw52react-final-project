@@ -47,23 +47,23 @@ const Products = () => {
 
   return (
       <div>
-        <h1>Cars</h1>
+        <h1 className="home-title">Сучасні Автомобілі</h1>
         <div className="products-filter-panel">
           <div className="products-filter">
             <div className="products-filter__group">
-              <label className="products-filter__label" htmlFor="filter">Фільтр за назвою</label>
+              <label className="products-filter__label" htmlFor="filter">Фільтр за назвою:</label>
               <input ref={inputRef} id="filter" className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => debouncedSetName(e.target.value)}/>
             </div>
             <SelectField
               id="sort"
-              label="Сортувати за"
+              label="Сортувати за:"
               options={SORT_BY_LIST}
               value={sort}
               onChangeSelect={(e) => setSort(e.target.value)}
             />
             <SelectField
               id="order"
-              label="Порядок"
+              label="Порядок:"
               options={ORDER_LIST}
               value={order}
               onChangeSelect={(e) => setOrder(e.target.value)}
