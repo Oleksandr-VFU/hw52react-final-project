@@ -1,7 +1,15 @@
 import { ProductInterface } from "../types/Product.interface"
 import { SelectOptionInterface } from "../types/common"
 
-export const CAR_CATEGORIES: string[] = ['Coupe', 'Electric', 'Hatchback', 'Pickup', 'Sedan', 'SUV', 'Van']
+export const CAR_CATEGORIES: SelectOptionInterface[] = [
+    { value: 'Coupe', text: 'Купе' },
+    { value: 'Electric', text: 'Електричний' },
+    { value: 'Hatchback', text: 'Хетчбек' },
+    { value: 'Pickup', text: 'Пікап' },
+    { value: 'Sedan', text: 'Седан' },
+    { value: 'SUV', text: 'Позашляховик' },
+    { value: 'Van', text: 'Фургон' }
+]
 
 export const INITIAL_CAR: Partial<ProductInterface> = {
     name: 'Tesla Model S Plaid',

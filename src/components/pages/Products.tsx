@@ -8,6 +8,7 @@ import { debounce } from "../../utils/debounce"
 import Product from "../products/Product"
 import AddProduct from "../products/AddProduct"
 import { SORT_BY_LIST, ORDER_LIST } from "../../data/mockData"
+import SelectField from "../form/SelectField"
 
 const Products = () => {
   const [page, setPage] = useState<number>(1)
@@ -34,29 +35,23 @@ const Products = () => {
         <div className="products-filter-panel">
           <div className="products-filter">
             <div className="products-filter__group">
-              <label htmlFor="filter">Фільтр за назвою</label>
+              <label className="products-filter__label" htmlFor="filter">Фільтр за назвою</label>
               <input ref={inputRef} id="filter" className="products-filter__input" type="text" placeholder="Фільтрувати за назвою..." onChange={(e) => debouncedSetName(e.target.value)}/>
             </div>
-            <div className="products-filter__group">
-              <label htmlFor="sort">Сортувати за</label>
-              <select className="products-filter__select" id="sort" value={sort} onChange={(e) => setSort(e.target.value)}>
-                {SORT_BY_LIST.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.text}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="products-filter__group">
-              <label htmlFor="order">Порядок</label>
-              <select id="order" className="products-filter__select" value={order} onChange={(e) => setOrder(e.target.value)}>
-                {ORDER_LIST.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.text}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <SelectField
+              id="sort"
+              label="Сортувати за"
+              options={SORT_BY_LIST}
+              value={sort}
+              onChangeSelect={(e) => setSort(e.target.value)}
+            />
+            <SelectField
+              id="order"
+              label="Порядок"
+              options={ORDER_LIST}
+              value={order}
+              onChangeSelect={(e) => setOrder(e.target.value)}
+            />
           </div>
           <button className="products-filter__reset" onClick={resetFilters}><MdRefresh /></button>
         </div>
