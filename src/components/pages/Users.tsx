@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import useFetch from '../../hooks/useFetch'
-import type { UserInterface } from '../../types/User.Interface'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch } from '../../redux/store'
 import { fetchAllUsers, selectUsers, selectUsersLoading, selectUsersError  } from '../../redux/slices/userSlice'

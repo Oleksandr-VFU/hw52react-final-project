@@ -242,6 +242,7 @@
   background: #16a085;
 }
 
+
 /* LOADING & ERROR */
 .loading {
   color: #1abc9c;
@@ -566,4 +567,24 @@ form {
 }
 .form-button:hover {
   background: #16a085;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  width: 100%;
+}
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 6px solid #e3f0ff;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
