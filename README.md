@@ -1,12 +1,112 @@
-# React + Vite
+# Final React JS Project — Car Sales App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Опис проекту
 
-Currently, two official plugins are available:
+Це фінальний навчальний проект з курсу **React JS** — "Розробка курсового проекту з React і Redux Toolkit". В додатку реалізовано пошук, перегляд та придбання сучасних автомобілів. Проект створено для закріплення навичок роботи з React, Redux Toolkit, хуками, компонентами, станами, слайсами та thunks. Весь код написано згідно принципів чистого коду та сучасних best practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Проект створено за допомогою Vite
+- Всі основні функції реалізовано через компоненти, хуки, Redux-слайси та thunks
+- Дотримано структурованої архітектури та чистого коду
 
-## Expanding the ESLint configuration
+## Структура проекту
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── common/
+│   │   │   └── Navbar.tsx
+│   │   ├── form/
+│   │   │   ├── InputField.tsx
+│   │   │   ├── ProductForm.tsx
+│   │   │   └── SelectField.tsx
+│   │   ├── layout/
+│   │   ├── modals/
+│   │   │   └── Modal.tsx
+│   │   ├── pages/
+│   │   │   ├── Home.tsx
+│   │   │   ├── Posts.tsx
+│   │   │   ├── Products.tsx
+│   │   │   ├── ToDos.tsx
+│   │   │   └── Users.tsx
+│   │   ├── products/
+│   │   │   ├── AddProduct.tsx
+│   │   │   ├── EditProduct.tsx
+│   │   │   ├── Pagination.tsx
+│   │   │   └── Product.tsx
+│   ├── data/
+│   │   └── mockData.ts
+│   ├── hooks/
+│   │   ├── useAdd.ts
+│   │   ├── useDelete.ts
+│   │   ├── useFetch.ts
+│   │   └── useUpdate.ts
+│   ├── redux/
+│   │   ├── store.ts
+│   │   └── slices/
+│   │       ├── authSlice.ts
+│   │       ├── createFetchSlice.ts
+│   │       ├── createFetchThunk.ts
+│   │       ├── postsSlice.ts
+│   │       ├── productsSlice.ts
+│   │       └── userSlice.ts
+│   ├── types/
+│   │   ├── common.ts
+│   │   ├── Post.Interface.ts
+│   │   ├── Product.Interface.ts
+│   │   └── User.Interface.ts
+│   ├── ui/
+│   │   ├── loading.ts
+│   │   └── Loading.tsx
+│   ├── utils/
+│   │   ├── debounce.ts
+│   │   └── mockapi.ts
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── README.md
+├── vite.config.js
+```
+
+## Деплой
+
+- [Демо на Vercel](https://hw52react-final-project.vercel.app/)
+- [GitHub репозиторій](https://github.com/Oleksandr-VFU/hw52react-final-project)
+
+## Інструкція з встановлення та запуску
+
+1. Клонувати репозиторій:
+   ```bash
+   git clone https://github.com/Oleksandr-VFU/hw52react-final-project.git
+   ```
+2. Перейти в папку проекту:
+   ```bash
+   cd hw52react-final-project/hw52-final-react-app
+   ```
+3. Встановити залежності:
+   ```bash
+   npm install
+   # або
+   yarn install
+   ```
+4. Запустити проект:
+   ```bash
+   npm run dev
+   # або
+   yarn dev
+   ```
+5. Відкрити у браузері [http://localhost:5173](http://localhost:5173)
+
+---
+
+**Автор:** Oleksandr Komnatskyi
+
+Проект виконано в рамках фінального завдання курсу React JS. Всі права захищено.
