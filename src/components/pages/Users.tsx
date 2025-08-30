@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch } from '../../redux/store'
+import { AppDispatch, RootState } from '../../redux/store'
+import { Navigate } from 'react-router'
 import { fetchAllUsers, selectUsers, selectUsersLoading, selectUsersError  } from '../../redux/slices/userSlice'
 
 const Users = () => {
@@ -8,11 +9,15 @@ const Users = () => {
   const users = useSelector(selectUsers)
   const isLoading = useSelector(selectUsersLoading)
   const error = useSelector(selectUsersError)
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn)
 
   useEffect(() => {
     dispatch(fetchAllUsers('https://jsonplaceholder.typicode.com/users'))
   }, [dispatch])
 
+  if (!isLoggedIn) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <div>
       <h1>Users</h1>
